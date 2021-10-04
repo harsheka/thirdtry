@@ -1,13 +1,13 @@
 Package: thirdtry
 Type: Package
-Title: What the Package Does in One 'Title Case' Line
+Title: apply cpp functions and R functions to data sets.
 Version: 1.0
 Date: 2021-09-28
-Author: Your Name
-Maintainer: Your Name <your@email.com>
-Description: One paragraph description of what the package
-      does as one or more full sentences.
+Author: Karl Harshe
+Maintainer: Karl Harshe <kh2638@nau.edu>
+Description: This package contains several programs to import c++ code as well 
+  as R programs already created into one complete package.
 License: GPL (>= 2)
-Imports: Rcpp (>= 1.0.7)
-LinkingTo: Rcpp, RcppArmadillo
+Imports: Rcpp (>= 1.0.7), data.table
+LinkingTo: Rcpp, RcppArmadillo, data.table
 RoxygenNote: 7.1.2

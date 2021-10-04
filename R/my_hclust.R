@@ -4,6 +4,7 @@
 #' @return identity_vec a vector of clusters that each point belongs to
 #' @export
 
+
 my_hclusters= function (data_input, cluster_desired){
   
   # assign each point to its own cluster

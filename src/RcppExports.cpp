@@ -43,11 +43,24 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// my_kmeans_cpp
+arma::mat my_kmeans_cpp(arma::mat data, int clusters);
+RcppExport SEXP _thirdtry_my_kmeans_cpp(SEXP dataSEXP, SEXP clustersSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type data(dataSEXP);
+    Rcpp::traits::input_parameter< int >::type clusters(clustersSEXP);
+    rcpp_result_gen = Rcpp::wrap(my_kmeans_cpp(data, clusters));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_thirdtry_rcpp_matrix", (DL_FUNC) &_thirdtry_rcpp_matrix, 0},
     {"_thirdtry_add_two", (DL_FUNC) &_thirdtry_add_two, 1},
     {"_thirdtry_read_data", (DL_FUNC) &_thirdtry_read_data, 1},
+    {"_thirdtry_my_kmeans_cpp", (DL_FUNC) &_thirdtry_my_kmeans_cpp, 2},
     {NULL, NULL, 0}
 };
 

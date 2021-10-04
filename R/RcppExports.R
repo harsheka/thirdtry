@@ -13,3 +13,7 @@ read_data <- function(x) {
     .Call(`_thirdtry_read_data`, x)
 }
 
+my_kmeans_cpp <- function(data, clusters) {
+    .Call(`_thirdtry_my_kmeans_cpp`, data, clusters)
+}
+
