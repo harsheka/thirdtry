@@ -27,17 +27,21 @@ arma::mat read_data(arma::mat x){ //arma::mat
 
 // [[Rcpp::export]]
 arma::mat my_kmeans_cpp(arma::mat data, int clusters){
-  // select random points to be starting cluster centers
-  int point = rand() % data.n_rows;
-  arma::mat cluster_centers;
-  srand(time(0));
-  for (int i = 0; i < clusters; i++){
+  // select random points to be starting cluster centers or use the first points
+   
+  arma::mat cluster_centers = data.row(0);
+  //cluster_centers.reset;
+  //srand(time(0));
+  for (int i = 1; i < clusters; i++){
     int point = rand() % data.n_rows;
-    arma::vec cluster_row = data.row(point);
-    cluster_centers = join_vert(cluster_centers, cluster_row);
+    cout << "point is: " << point << endl;
+    arma::mat cluster_row = data.row(point);
+    cout << "cluster row is: " << cluster_row << endl;
+    //arma::mat cluster_row = data.row(i);
+    arma::mat cluster_centers = join_cols(cluster_centers, cluster_row);
   }
   // assign all points to a cluster
-  arma::vec cl_assign_vec;
+  //arma::vec cl_assign_vec;
 /*  for( unsigned int i = 0; i < data.n_rows+1; i++){
     arma::vec dist_and_clust_num;
     for(int j = 0; j<cluster_centers.n_rows(); j++){

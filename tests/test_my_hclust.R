@@ -1,6 +1,7 @@
 library(testthat)
 library(thirdtry)
-context("test_hello_world")
+
+context("test_my_hclust")
 set.seed(5)
 
 test_that("My_hclust finds the correct number of clusters",

@@ -7,6 +7,18 @@ Author: Karl Harshe
 Maintainer: Karl Harshe <kh2638@nau.edu>
 Description: This package contains several programs to import c++ code as well 
   as R programs already created into one complete package.
+  my_hclust takes 2 arguments (data, and clusters desired)
+  data must be a matrix and clusters must be an int
+Usage:rcpp_matrix(), add_two(integer),  read_data(matrix/vector), 
+  my_kmenas_cpp(matrix, integer)
+Arguments: rcpp_matrix() takes no arguments and returns a numeric vector 
+  redimensioned into a 2x2 matrix with cpp indexing
+  add_two() takes a single integer and adds 2 to it, returning an arma:vector
+  with a single element
+  read_data() takes a single matrix or arma::mat argument and returns the same
+  as an arma::mat object
+  my_kmenas_cpp() takes two arguments, a data set with no labels and the number
+  of clusters it should be seporated into.
 License: GPL (>= 2)
 Imports: Rcpp (>= 1.0.7), data.table
 LinkingTo: Rcpp, RcppArmadillo, data.table
